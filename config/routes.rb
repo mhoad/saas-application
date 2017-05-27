@@ -1,8 +1,17 @@
 # frozen_string_literal: true
 
+require 'constraints/subdomain_required'
+
 Rails.application.routes.draw do
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  constraints(SubdomainRequired) do
+    scope module: 'accounts' do
+      root to: 'widgets#index', as: :account_root
+      resources :widgets
+    end
+  end
+
   root to: 'home#index'
   get '/accounts/new', to: 'accounts#new', as: :new_account
   post '/accounts', to: 'accounts#create', as: :accounts
