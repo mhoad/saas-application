@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+# Accounts are the same as customers. While a single account
+# could have many users within it, they are still only a
+# single customer
 class AccountsController < ApplicationController
   def new
     @account = Account.new
