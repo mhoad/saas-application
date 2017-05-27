@@ -37,10 +37,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'annotate'
-gem 'simple_form'
 gem 'foundation-rails', '~> 6.0'
 gem 'foundation_rails_helper', '>= 3.0.0.rc2', '< 4.0'
 gem 'jquery-rails'
+gem 'simple_form'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
