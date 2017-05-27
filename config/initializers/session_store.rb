@@ -8,7 +8,7 @@ case Rails.env
 when 'development', 'test'
   options[:domain] = 'lvh.me'
 when 'production'
-  # TBA
+  options[:domain] = 'reporting.social'
 end
 
 Rails.application.config.session_store :cookie_store, options
