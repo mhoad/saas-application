@@ -12,7 +12,7 @@ feature 'Adding widgets' do
     end
 
     it 'can add a widget' do
-      visit root_url(subdomain: account.subdomain)
+      visit root_url
       click_link 'Add widget'
       fill_in 'Name', with: 'Widget Test'
       click_button 'Create Widget'
