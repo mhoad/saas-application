@@ -4,4 +4,8 @@
 # is not currently signed in
 class HomeController < ApplicationController
   def index; end
+
+  def health_check
+    render plain: 'OK'
+  end
 end
