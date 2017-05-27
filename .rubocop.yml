@@ -9,6 +9,7 @@ AllCops:
     - 'tmp/**/*'
     - 'node_modules/**/*'
     - 'bin/**/*'
+    - 'db/**/*'
   TargetRubyVersion: 2.4
 
 Style/Encoding:
