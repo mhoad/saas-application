@@ -8,6 +8,7 @@ feature 'Accounts' do
 
     click_link 'Create a new account'
     fill_in 'Name', with: 'Test'
+    fill_in 'Subdomain', with: 'test'
     fill_in 'Email', with: 'test@example.com'
     fill_in 'Password', with: 'password', exact: true
     fill_in 'Password confirmation', with: 'password'
@@ -18,6 +19,7 @@ feature 'Accounts' do
       expect(page).to have_content(success_message)
     end
 
+    expect(page.current_url).to eq('http://test.lvh.me/')
     expect(page).to have_content('Signed in as test@example.com')
   end
 end
