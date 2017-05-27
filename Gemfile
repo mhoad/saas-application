@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'annotate'
+gem 'devise'
 gem 'foundation-rails', '~> 6.0'
 gem 'foundation_rails_helper', '>= 3.0.0.rc2', '< 4.0'
 gem 'jquery-rails'
