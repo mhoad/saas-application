@@ -13,7 +13,6 @@ feature 'Adding widgets' do
 
     it 'can add a widget' do
       visit root_url(subdomain: account.subdomain)
-      save_and_open_page
       click_link 'Add widget'
       fill_in 'Name', with: 'Widget Test'
       click_button 'Create Widget'
