@@ -15,7 +15,7 @@ Rails.application.routes.draw do
           patch :accepted
         end
       end
-      resources :users, only: [:index, :destroy]
+      resources :users, only: %i[index destroy]
     end
   end
 

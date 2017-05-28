@@ -32,18 +32,18 @@ RSpec.feature 'Users', type: :feature do
     end
   end
 
-  context "as an account user" do
+  context 'as an account user' do
     before { login_as(user) }
 
-    scenario "it does not see the users link" do
+    scenario 'it does not see the users link' do
       visit root_url
-      expect { find_link("Users") }.to raise_error(Capybara::ElementNotFound)
+      expect { find_link('Users') }.to raise_error(Capybara::ElementNotFound)
     end
 
-    scenario "cannot go to the users page" do
+    scenario 'cannot go to the users page' do
       visit users_path
-      within(".flash") do
-        expect(page).to have_content("Only an owner of an account can do that.")
+      within('.flash') do
+        expect(page).to have_content('Only an owner of an account can do that.')
       end
     end
   end

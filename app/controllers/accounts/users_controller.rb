@@ -1,14 +1,15 @@
+# frozen_string_literal: true
+
 module Accounts
   class UsersController < Accounts::BaseController
     before_action :authorize_owner!
-    
-    def index
-    end
+
+    def index; end
 
     def destroy
       user = User.find(params[:id])
       current_account.users.delete(user)
-      flash[:notice] = "#{user.email} has been removed from this account." 
+      flash[:notice] = "#{user.email} has been removed from this account."
       redirect_to users_path
     end
   end
