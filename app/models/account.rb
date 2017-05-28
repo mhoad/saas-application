@@ -19,4 +19,6 @@ class Account < ApplicationRecord
   validates :name, presence: true
 
   has_many :invitations
+  has_many :memberships
+  has_many :users, through: :memberships
 end

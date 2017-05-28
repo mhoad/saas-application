@@ -9,7 +9,12 @@ Rails.application.routes.draw do
     scope module: 'accounts' do
       root to: 'widgets#index', as: :account_root
       resources :widgets
-      resources :invitations, only: %i[new create]
+      resources :invitations, only: %i[new create] do
+        member do
+          get :accept
+          patch :accepted
+        end
+      end
     end
   end
 
