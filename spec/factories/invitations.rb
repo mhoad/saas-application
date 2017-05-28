@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: invitations
@@ -9,6 +8,7 @@
 #  account_id :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  token      :string
 #
 
 FactoryGirl.define do
