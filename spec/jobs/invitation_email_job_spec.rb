@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe InvitationEmailJob, type: :job do
@@ -11,9 +13,9 @@ RSpec.describe InvitationEmailJob, type: :job do
     end
 
     it 'delivers an invitation email' do
-      expect {
+      expect do
         InvitationEmailJob.new.perform(invitation.id)
-      }.to change{ ActionMailer::Base.deliveries.size }.by(1)
+      end.to change { ActionMailer::Base.deliveries.size }.by(1)
     end
   end
 

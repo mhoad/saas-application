@@ -49,10 +49,10 @@ group :development, :test do
   gem 'bullet'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara'
+  gem 'email_spec'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'launchy'
   gem 'rspec-rails', '~> 3.5'
-  gem 'email_spec'
 end
 
 group :development do
