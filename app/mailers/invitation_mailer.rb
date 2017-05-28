@@ -7,7 +7,8 @@ class InvitationMailer < ApplicationMailer
     @invitation = invitation
     mail(
       to: invitation.email,
-      subject: "Invitation to join #{invitation.account.name} on Reporting.Social"
+      subject: "Invitation to join #{invitation.account_name} on Reporting.Social",
+      content_type: 'multipart/alternative'
     )
   end
 end

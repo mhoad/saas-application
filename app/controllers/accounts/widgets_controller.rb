@@ -22,7 +22,7 @@ module Accounts
         flash[:notice] = 'Widget was successfully created.'
         redirect_to(@widget)
       else
-        render action: 'new'
+        render 'new'
       end
     end
 

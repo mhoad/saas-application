@@ -3,9 +3,9 @@
   <ul class="accounts">
   <% current_user.all_accounts.each do |account| %>
     <li>
-      <%= link_to root_url(subdomain: account.subdomain) do %> 
+      <%= link_to root_url(subdomain: account.subdomain) do %>
         <%= account.name %> (<%= account.subdomain %>)
-      <% end %> 
+      <% end %>
     </li>
   <% end %>
   </ul>
