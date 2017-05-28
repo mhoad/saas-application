@@ -99,6 +99,8 @@ GEM
     factory_girl_rails (4.8.0)
       factory_girl (~> 4.8.0)
       railties (>= 3.0.0)
+    faker (1.7.3)
+      i18n (~> 0.5)
     ffi (1.9.18)
     foundation-rails (6.3.1.0)
       railties (>= 3.1.0)
@@ -264,6 +266,7 @@ DEPENDENCIES
   devise
   email_spec
   factory_girl_rails (~> 4.0)
+  faker
   foundation-rails (~> 6.0)
   foundation_rails_helper (>= 3.0.0.rc2, < 4.0)
   jbuilder (~> 2.5)

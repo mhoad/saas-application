@@ -51,6 +51,7 @@ group :development, :test do
   gem 'capybara'
   gem 'email_spec'
   gem 'factory_girl_rails', '~> 4.0'
+  gem 'faker'
   gem 'launchy'
   gem 'rspec-rails', '~> 3.5'
 end

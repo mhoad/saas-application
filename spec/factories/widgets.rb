@@ -12,6 +12,6 @@
 
 FactoryGirl.define do
   factory :widget do
-    name 'MyString'
+    name { Faker::Company.catch_phrase }
   end
 end

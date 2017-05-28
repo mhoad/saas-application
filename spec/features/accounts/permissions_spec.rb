@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-feature 'Account permissions' do
+RSpec.feature 'Account permissions', type: :feature do
   let(:account) { FactoryGirl.create(:account) }
   before do
     set_subdomain(account.subdomain)
