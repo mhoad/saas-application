@@ -15,10 +15,12 @@ module Accounts
     end
     helper_method :owner?
 
+    private
+
     def authorize_user!
       authenticate_user!
       unless current_account.owner == current_user ||
-        current_account.users.exists?(current_user.id)
+             current_account.users.exists?(current_user.id)
         flash[:notice] = 'You are not permitted to view that account.'
         redirect_to root_url(subdomain: nil)
       end

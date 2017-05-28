@@ -4,7 +4,7 @@ module Accounts
   class InvitationsController < Accounts::BaseController
     before_action :authorize_owner!, except: %i[accept accepted]
     skip_before_action :authenticate_user!, only: %i[accept accepted]
-    skip_before_action :authorize_user!, only: [:accept, :accepted]
+    skip_before_action :authorize_user!, only: %i[accept accepted]
 
     def new
       @invitation = Invitation.new
