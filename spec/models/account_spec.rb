@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: accounts
@@ -10,8 +11,6 @@
 #  owner_id   :integer
 #  subdomain  :string
 #
-
-# frozen_string_literal: true
 
 require 'rails_helper'
 

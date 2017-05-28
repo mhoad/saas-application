@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: widgets
@@ -8,8 +9,6 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-
-# frozen_string_literal: true
 
 require 'rails_helper'
 

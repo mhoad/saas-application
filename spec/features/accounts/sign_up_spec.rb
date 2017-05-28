@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-feature 'Accounts' do
+RSpec.feature 'Accounts', type: :feature do
   scenario 'creating an account' do
     visit root_path
 

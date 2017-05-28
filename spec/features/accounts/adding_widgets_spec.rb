@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-feature 'Adding widgets' do
+RSpec.feature 'Adding widgets', type: :feature do
   let(:account) { FactoryGirl.create(:account) }
 
   context 'as the accounts owner' do

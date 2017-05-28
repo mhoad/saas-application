@@ -1,5 +1,17 @@
 # frozen_string_literal: true
 
+# == Schema Information
+#
+# Table name: accounts
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  owner_id   :integer
+#  subdomain  :string
+#
+
 # Accounts are the same as customers. While a single account
 # could have many users within it, they are still only a
 # single customer

@@ -36,7 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'annotate'
+gem 'annotate', git: 'https://github.com/ctran/annotate_models.git'
 gem 'devise'
 gem 'foundation-rails', '~> 6.0'
 gem 'foundation_rails_helper', '>= 3.0.0.rc2', '< 4.0'

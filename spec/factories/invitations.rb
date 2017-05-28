@@ -2,17 +2,18 @@
 
 # == Schema Information
 #
-# Table name: accounts
+# Table name: invitations
 #
 #  id         :integer          not null, primary key
-#  name       :string
+#  email      :string
+#  account_id :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  owner_id   :integer
-#  subdomain  :string
 #
 
-require 'rails_helper'
-
-RSpec.describe AccountsController, type: :controller do
+FactoryGirl.define do
+  factory :invitation do
+    email 'MyString'
+    account nil
+  end
 end
