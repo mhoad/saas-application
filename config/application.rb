@@ -29,6 +29,11 @@ module SaaSApplication
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Make sure that we auto generate RSpec tests
     config.generators.test_framework :rspec
+
+    # Set the ActiveJob queue Adaptor
+    config.active_job.queue_adapter = :delayed_job
   end
 end

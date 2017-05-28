@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'annotate', git: 'https://github.com/ctran/annotate_models.git'
+gem 'delayed_job_active_record'
 gem 'devise'
 gem 'foundation-rails', '~> 6.0'
 gem 'foundation_rails_helper', '>= 3.0.0.rc2', '< 4.0'
@@ -51,6 +52,7 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.0'
   gem 'launchy'
   gem 'rspec-rails', '~> 3.5'
+  gem 'email_spec'
 end
 
 group :development do
