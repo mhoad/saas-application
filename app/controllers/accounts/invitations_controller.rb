@@ -25,19 +25,8 @@ module Accounts
     def accepted
       @invitation = Invitation.find_by!(token: params[:id])
 
-      if user_signed_in?
-        user = current_user
-      else
-        user_params = params[:user].permit(
-          :email,
-          :password,
-          :password_confirmation
-        )
-
-        user = User.create(user_params)
-        current_account.users << user
-        sign_in(user)
-      end
+      signup_new_user unless user_signed_in?
+      current_account.users << current_user
 
       flash[:notice] = "You have joined the #{current_account.name} account."
       redirect_to root_url(subdomain: current_account.subdomain)
@@ -53,6 +42,17 @@ module Accounts
 
     def invitation_params
       params.require(:invitation).permit(:email)
+    end
+
+    def signup_new_user
+      user_params = params[:user].permit(
+        :email,
+        :password,
+        :password_confirmation
+      )
+
+      user = User.create(user_params)
+      sign_in(user)
     end
   end
 end
