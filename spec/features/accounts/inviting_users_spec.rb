@@ -13,6 +13,7 @@ RSpec.feature 'Inviting users', type: :feature do
   end
 
   scenario 'invites a user successfully' do
+    click_link 'Users'
     click_link 'Invite user'
     fill_in 'Email', with: 'test@example.com'
     click_button 'Invite User'
