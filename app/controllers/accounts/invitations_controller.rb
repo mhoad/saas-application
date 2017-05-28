@@ -11,6 +11,7 @@ module Accounts
     def create
       @invitation = current_account.invitations.new(invitation_params)
       @invitation.save
+      InvitationEmailJob.perform_later(@invitation.id)
       flash[:notice] = "#{@invitation.email} has been invited."
       redirect_to root_url
     end

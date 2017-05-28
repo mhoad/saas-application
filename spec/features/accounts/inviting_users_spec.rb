@@ -3,6 +3,7 @@
 require 'rails_helper'
 
 RSpec.feature 'Inviting users', type: :feature do
+  include ActiveJob::TestHelper
   let(:account) { FactoryGirl.create(:account) }
 
   before do
@@ -15,6 +16,12 @@ RSpec.feature 'Inviting users', type: :feature do
     click_link 'Invite user'
     fill_in 'Email', with: 'test@example.com'
     click_button 'Invite User'
+
+    # Make sure it gets added to the job queue and then execute the job
+    expect(enqueued_jobs.size).to eq(1)
+    invitation_id = enqueued_jobs.first[:args].first
+    perform_enqueued_jobs { InvitationEmailJob.perform_now(invitation_id) }
+
     expect(page).to have_content('test@example.com has been invited.')
     expect(page.current_url).to eq(root_url)
 

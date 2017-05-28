@@ -13,7 +13,7 @@
 
 FactoryGirl.define do
   factory :invitation do
-    email 'MyString'
-    account nil
+    email 'user@example.com'
+    account
   end
 end
