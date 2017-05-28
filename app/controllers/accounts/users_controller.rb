@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 module Accounts
+  # This is what we use to list the current users on a given account
+  # as well as providing the functionality if an account owner
+  # wishes to remove another user from the account.
   class UsersController < Accounts::BaseController
     before_action :authorize_owner!
 

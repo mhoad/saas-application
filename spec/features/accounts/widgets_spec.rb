@@ -3,7 +3,6 @@
 require 'rails_helper'
 
 RSpec.feature 'Widgets', type: :feature do
-
   let!(:account_a) { FactoryGirl.create(:account) }
   let!(:account_b) { FactoryGirl.create(:account) }
 

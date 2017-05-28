@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 module Accounts
+  # This class handles the functionality for when an account owner
+  # wants to invite another person to their account. It is setup
+  # so that both new users and those with existing accounts
+  # will be able to join without any problems.
   class InvitationsController < Accounts::BaseController
     before_action :authorize_owner!, except: %i[accept accepted]
     skip_before_action :authenticate_user!, only: %i[accept accepted]

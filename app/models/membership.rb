@@ -10,7 +10,6 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-
 class Membership < ApplicationRecord
   belongs_to :account
   belongs_to :user

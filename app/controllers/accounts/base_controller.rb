@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 module Accounts
+  # This is where all of the common logic for account level controllers
+  # is kept. It currently deals with authorization, authentication and
+  # provides a few helper methods that are used commonly in the sub-classes
   class BaseController < ApplicationController
     before_action :authenticate_user!
     before_action :authorize_user!

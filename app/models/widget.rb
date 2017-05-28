@@ -8,6 +8,7 @@
 #  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  account_id :integer
 #
 class Widget < ApplicationRecord
   belongs_to :account

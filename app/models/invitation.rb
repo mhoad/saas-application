@@ -11,7 +11,6 @@
 #  updated_at :datetime         not null
 #  token      :string
 #
-
 class Invitation < ApplicationRecord
   belongs_to :account
   before_create :generate_token

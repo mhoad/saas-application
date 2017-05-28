@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 module Accounts
+  # This is an example class that I setup to demonstrate how resrouces that
+  # are scoped to the account are setup in order to provide the multi-tenancy
+  # features that the application requires. As you can see everything is
+  # just scoped by a database field so we can do things like current_account.widgets
   class WidgetsController < Accounts::BaseController
     before_action :find_widget, only: %i[edit update show destroy]
 
@@ -22,8 +26,7 @@ module Accounts
       end
     end
 
-    def show
-    end
+    def show; end
 
     def edit; end
 
