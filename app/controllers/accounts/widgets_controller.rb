@@ -5,7 +5,7 @@ module Accounts
     before_action :find_widget, only: %i[edit update show destroy]
 
     def index
-      @widgets = Widget.all
+      @widgets = current_account.widgets
     end
 
     def new
@@ -13,7 +13,7 @@ module Accounts
     end
 
     def create
-      @widget = Widget.new(params[:widget_params])
+      @widget = current_account.widgets.build(widget_params)
       if @widget.save
         flash[:notice] = 'Widget was successfully created.'
         redirect_to(@widget)
@@ -22,7 +22,8 @@ module Accounts
       end
     end
 
-    def show; end
+    def show
+    end
 
     def edit; end
 
@@ -52,7 +53,10 @@ module Accounts
     end
 
     def find_widget
-      @widget = Widget.find(params[:id])
+      @widget = current_account.widgets.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      flash[:alert] = 'Widget not found.'
+      redirect_to root_url
     end
   end
 end
