@@ -30,5 +30,4 @@ RSpec.feature 'Adding widgets', type: :feature do
     expect(page).to have_content("You have joined the #{account.name} account.")
     expect(page.current_url).to eq(root_url(subdomain: account.subdomain))
   end
-
 end
