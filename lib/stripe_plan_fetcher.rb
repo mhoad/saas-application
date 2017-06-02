@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class StripePlanFetcher
   def self.store_locally
     Stripe::Plan.all.each do |plan|
